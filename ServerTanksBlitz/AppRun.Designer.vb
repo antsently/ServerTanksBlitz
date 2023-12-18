@@ -22,34 +22,34 @@ Partial Class AppRun
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Button1 = New Button()
+        components = New ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AppRun))
+        BlockButton = New Button()
         CheckBox1 = New CheckBox()
         CheckBox2 = New CheckBox()
         CheckBox3 = New CheckBox()
         CheckBox4 = New CheckBox()
         CheckBox5 = New CheckBox()
         CheckBox6 = New CheckBox()
-        Button2 = New Button()
-        MenuStrip1 = New MenuStrip()
-        ПомощьToolStripMenuItem = New ToolStripMenuItem()
-        ПомощьToolStripMenuItem1 = New ToolStripMenuItem()
-        TextBox1 = New TextBox()
-        MenuStrip1.SuspendLayout()
+        UnblockButton = New Button()
+        TextBoxOutput = New TextBox()
+        ContextMenuStrip1 = New ContextMenuStrip(components)
+        КопироватьToolStripMenuItem = New ToolStripMenuItem()
+        ContextMenuStrip1.SuspendLayout()
         SuspendLayout()
         ' 
-        ' Button1
+        ' BlockButton
         ' 
-        Button1.Location = New Point(12, 262)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(135, 30)
-        Button1.TabIndex = 1
-        Button1.Text = "Заблокировать"
-        Button1.UseVisualStyleBackColor = True
+        BlockButton.Location = New Point(12, 262)
+        BlockButton.Name = "BlockButton"
+        BlockButton.Size = New Size(135, 30)
+        BlockButton.TabIndex = 1
+        BlockButton.Text = "Заблокировать"
+        BlockButton.UseVisualStyleBackColor = True
         ' 
         ' CheckBox1
         ' 
-        CheckBox1.AutoSize = True
-        CheckBox1.Location = New Point(44, 41)
+        CheckBox1.Location = New Point(44, 172)
         CheckBox1.Name = "CheckBox1"
         CheckBox1.Size = New Size(103, 24)
         CheckBox1.TabIndex = 2
@@ -59,7 +59,7 @@ Partial Class AppRun
         ' CheckBox2
         ' 
         CheckBox2.AutoSize = True
-        CheckBox2.Location = New Point(44, 71)
+        CheckBox2.Location = New Point(44, 202)
         CheckBox2.Name = "CheckBox2"
         CheckBox2.Size = New Size(103, 24)
         CheckBox2.TabIndex = 3
@@ -69,7 +69,7 @@ Partial Class AppRun
         ' CheckBox3
         ' 
         CheckBox3.AutoSize = True
-        CheckBox3.Location = New Point(44, 101)
+        CheckBox3.Location = New Point(44, 232)
         CheckBox3.Name = "CheckBox3"
         CheckBox3.Size = New Size(103, 24)
         CheckBox3.TabIndex = 4
@@ -78,8 +78,7 @@ Partial Class AppRun
         ' 
         ' CheckBox4
         ' 
-        CheckBox4.AutoSize = True
-        CheckBox4.Location = New Point(185, 41)
+        CheckBox4.Location = New Point(185, 172)
         CheckBox4.Name = "CheckBox4"
         CheckBox4.Size = New Size(103, 24)
         CheckBox4.TabIndex = 5
@@ -89,104 +88,96 @@ Partial Class AppRun
         ' CheckBox5
         ' 
         CheckBox5.AutoSize = True
-        CheckBox5.Location = New Point(185, 71)
+        CheckBox5.Location = New Point(185, 202)
         CheckBox5.Name = "CheckBox5"
-        CheckBox5.Size = New Size(103, 24)
+        CheckBox5.Size = New Size(139, 24)
         CheckBox5.TabIndex = 6
-        CheckBox5.Text = "Сервер С4"
+        CheckBox5.Text = "Сервер С4 (Rip)"
         CheckBox5.UseVisualStyleBackColor = True
         ' 
         ' CheckBox6
         ' 
         CheckBox6.AutoSize = True
-        CheckBox6.Location = New Point(185, 101)
+        CheckBox6.Location = New Point(185, 232)
         CheckBox6.Name = "CheckBox6"
         CheckBox6.Size = New Size(103, 24)
         CheckBox6.TabIndex = 7
         CheckBox6.Text = "Сервер С5"
         CheckBox6.UseVisualStyleBackColor = True
         ' 
-        ' Button2
+        ' UnblockButton
         ' 
-        Button2.Enabled = False
-        Button2.Location = New Point(185, 262)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(135, 30)
-        Button2.TabIndex = 8
-        Button2.Text = "Разблокировать"
-        Button2.UseVisualStyleBackColor = True
+        UnblockButton.Enabled = False
+        UnblockButton.Location = New Point(185, 262)
+        UnblockButton.Name = "UnblockButton"
+        UnblockButton.Size = New Size(135, 30)
+        UnblockButton.TabIndex = 8
+        UnblockButton.Text = "Разблокировать"
+        UnblockButton.UseVisualStyleBackColor = True
         ' 
-        ' MenuStrip1
+        ' TextBoxOutput
         ' 
-        MenuStrip1.ImageScalingSize = New Size(20, 20)
-        MenuStrip1.Items.AddRange(New ToolStripItem() {ПомощьToolStripMenuItem})
-        MenuStrip1.Location = New Point(0, 0)
-        MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(332, 28)
-        MenuStrip1.TabIndex = 10
-        MenuStrip1.Text = "MenuStrip1"
+        TextBoxOutput.BackColor = Color.AliceBlue
+        TextBoxOutput.BorderStyle = BorderStyle.None
+        TextBoxOutput.ContextMenuStrip = ContextMenuStrip1
+        TextBoxOutput.Location = New Point(12, 12)
+        TextBoxOutput.Multiline = True
+        TextBoxOutput.Name = "TextBoxOutput"
+        TextBoxOutput.ScrollBars = ScrollBars.Vertical
+        TextBoxOutput.ShortcutsEnabled = False
+        TextBoxOutput.Size = New Size(308, 154)
+        TextBoxOutput.TabIndex = 11
         ' 
-        ' ПомощьToolStripMenuItem
+        ' ContextMenuStrip1
         ' 
-        ПомощьToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ПомощьToolStripMenuItem1})
-        ПомощьToolStripMenuItem.Name = "ПомощьToolStripMenuItem"
-        ПомощьToolStripMenuItem.Size = New Size(65, 24)
-        ПомощьToolStripMenuItem.Text = "Меню"
+        ContextMenuStrip1.ImageScalingSize = New Size(20, 20)
+        ContextMenuStrip1.Items.AddRange(New ToolStripItem() {КопироватьToolStripMenuItem})
+        ContextMenuStrip1.Name = "ContextMenuStrip1"
+        ContextMenuStrip1.Size = New Size(163, 28)
         ' 
-        ' ПомощьToolStripMenuItem1
+        ' КопироватьToolStripMenuItem
         ' 
-        ПомощьToolStripMenuItem1.Name = "ПомощьToolStripMenuItem1"
-        ПомощьToolStripMenuItem1.ShortcutKeys = Keys.F1
-        ПомощьToolStripMenuItem1.Size = New Size(176, 26)
-        ПомощьToolStripMenuItem1.Text = "Помощь"
-        ' 
-        ' TextBox1
-        ' 
-        TextBox1.Location = New Point(12, 131)
-        TextBox1.Multiline = True
-        TextBox1.Name = "TextBox1"
-        TextBox1.ScrollBars = ScrollBars.Vertical
-        TextBox1.Size = New Size(308, 125)
-        TextBox1.TabIndex = 11
+        КопироватьToolStripMenuItem.Name = "КопироватьToolStripMenuItem"
+        КопироватьToolStripMenuItem.Size = New Size(162, 24)
+        КопироватьToolStripMenuItem.Text = "Копировать"
         ' 
         ' AppRun
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = SystemColors.Control
+        BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(332, 303)
-        Controls.Add(TextBox1)
-        Controls.Add(Button2)
+        Controls.Add(TextBoxOutput)
+        Controls.Add(UnblockButton)
         Controls.Add(CheckBox6)
         Controls.Add(CheckBox5)
         Controls.Add(CheckBox4)
         Controls.Add(CheckBox3)
         Controls.Add(CheckBox2)
         Controls.Add(CheckBox1)
-        Controls.Add(Button1)
-        Controls.Add(MenuStrip1)
-        MainMenuStrip = MenuStrip1
+        Controls.Add(BlockButton)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MaximizeBox = False
         MinimizeBox = False
         Name = "AppRun"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Блокировка серверов Tanks Blitz"
-        MenuStrip1.ResumeLayout(False)
-        MenuStrip1.PerformLayout()
+        ContextMenuStrip1.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BlockButton As Button
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents CheckBox3 As CheckBox
     Friend WithEvents CheckBox4 As CheckBox
     Friend WithEvents CheckBox5 As CheckBox
     Friend WithEvents CheckBox6 As CheckBox
-    Friend WithEvents Button2 As Button
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents ПомощьToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ПомощьToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents UnblockButton As Button
+    Friend WithEvents TextBoxOutput As TextBox
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents КопироватьToolStripMenuItem As ToolStripMenuItem
 
 End Class
