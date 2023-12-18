@@ -14,6 +14,9 @@
     <Title>Server Tanks Blitz</Title>
     <UseWPF>True</UseWPF>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Configurations>Debug;Release;64</Configurations>
+    <Platforms>AnyCPU;x86;x64</Platforms>
+    <Product>$(AssemblyName)</Product>
   </PropertyGroup>
 
   <ItemGroup>
