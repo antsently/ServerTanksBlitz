@@ -39,7 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\logo.png">
+    <None Include="..\img\logo.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
